@@ -1,0 +1,278 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Light background for contrast */
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #3498db; /* Brighter header color */
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.5s ease, box-shadow 0.3s ease;
+}
+
+header:hover {
+    background-color: #2980b9; /* Darker shade on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase; /* Make logo stand out */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px; /* Slightly larger font */
+    transition: color 0.3s ease, transform 0.3s ease; /* Add transform effect */
+}
+
+nav a:hover {
+    color: #e74c3c; /* Bright red on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.cta-button {
+    background-color: #e74c3c; /* Vibrant CTA color */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #c0392b; /* Darker shade on hover */
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+/* Hero Section Styles */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: url('hero-background.jpg') no-repeat center center/cover;
+    color: rgb(0, 0, 0);
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: slideInFromLeft 1.5s ease-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Text shadow for depth */
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.hero p {
+    font-size: 24px;
+    animation: slideInFromRight 1.5s ease-out;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Text shadow for depth */
+}
+
+@keyframes slideInFromRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Features Section Styles */
+.features {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #ecf0f1; /* Soft background for contrast */
+}
+
+.features h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    text-transform: uppercase; /* Make headings pop */
+}
+
+.feature {
+    margin: 20px 0;
+    transition: transform 0.3s ease; /* Add hover effect */
+}
+
+.feature:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Faculty Section Styles */
+.faculty {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #ecf0f1;
+}
+
+.faculty h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    text-transform: uppercase; /* Make headings pop */
+}
+
+.faculty-member {
+    display: inline-block;
+    margin: 20px;
+}
+
+.photo-frame {
+    border: 5px solid #3498db; /* Bright frame color */
+    border-radius: 10px;
+    overflow: hidden;
+    width: 220px; /* Slightly larger frame */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease; /* Add transform effect */
+}
+
+.photo-frame:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+.photo-frame img {
+    width: 100%; /* Make image fill the frame */
+    height: auto;
+}
+
+.frame-text {
+    padding: 10px;
+    font-size: 16px;
+    color: #2c3e50;
+    text-align: center;
+    background-color: white; /* Background for text */
+    margin-top: -5px; /* Overlap the bottom of the image */
+}
+
+/* Testimonials Section Styles */
+.testimonials {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #34495e, #2c3e50); /* Gradient background */
+    color: white;
+    position: relative;
+    overflow: hidden; /* Prevents overflow of pseudo-element */
+}
+
+.testimonials h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Make headings pop */
+}
+
+.testimonials p {
+    margin: 10px 0;
+    font-style: italic; /* Make testimonials stand out */
+    position: relative; /* For pseudo-element effect */
+}
+
+.testimonials p::before {
+    content: '“'; /* Opening quote */
+    font-size: 48px;
+    color: #e74c3c; /* Bright color for quotes */
+    position: absolute;
+    left: 10px;
+    top: -20px;
+}
+
+.testimonials p::after {
+    content: '”'; /* Closing quote */
+    font-size: 48px;
+    color: #e74c3c; /* Bright color for quotes */
+    position: absolute;
+    right: 10px;
+    bottom: -20px;
+}
+
+/* Statistics Section Styles */
+.statistics {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #ecf0f1;
+    position: relative;
+    overflow: hidden; /* Prevents overflow of pseudo-element */
+}
+
+.stat {
+    display: inline-block;
+    margin: 20px;
+    position: relative; /* For pseudo-element effect */
+}
+
+.stat h3 {
+    font-size: 48px;
+    color: #3498db; /* Bright color for numbers */
+}
+
+.stat p {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-top: 10px;
+}
+
+.stat::before {
+    content: '★'; /* Star icon */
+    font-size: 30px;
+    color: #e74c3c; /* Bright color for star */
+    position: absolute;
+    top: -10px; /* Adjust position */
+    left: 50%;
+    transform: translateX(-50%); /* Center the star */
+}
+
+/* Footer Styles */
+footer {
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* Gradient footer background */
+    color: white;
+    position: relative;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #3498db; /* Bright color on hover */
+}
