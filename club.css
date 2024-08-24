@@ -17,6 +17,11 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.5s ease, box-shadow 0.3s ease;
 }
+.logo-icon {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    margin-right: 10px; /* Space between icon and text */
+}
 
 header:hover {
     background-color: #2980b9; /* Darker shade on hover */
