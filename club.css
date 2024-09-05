@@ -17,11 +17,6 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.5s ease, box-shadow 0.3s ease;
 }
-.logo-icon {
-    width: 40px; /* Adjust size as needed */
-    height: 40px; /* Adjust size as needed */
-    margin-right: 10px; /* Space between icon and text */
-}
 
 header:hover {
     background-color: #2980b9; /* Darker shade on hover */
@@ -55,20 +50,6 @@ nav a {
 nav a:hover {
     color: #e74c3c; /* Bright red on hover */
     transform: scale(1.1); /* Slightly enlarge on hover */
-}
-
-.cta-button {
-    background-color: #e74c3c; /* Vibrant CTA color */
-    color: white;
-    padding: 10px 15px;
-    border-radius: 25px;
-    font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #c0392b; /* Darker shade on hover */
-    transform: scale(1.1); /* Scale up on hover */
 }
 
 /* Hero Section Styles */
@@ -133,88 +114,92 @@ nav a:hover {
 
 /* Faculty Section Styles */
 .faculty {
-    padding: 60px 20px;
     text-align: center;
-    background-color: #ecf0f1;
+    padding: 40px 20px; /* Padding for top/bottom */
 }
 
-.faculty h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
-    color: #2c3e50;
-    text-transform: uppercase; /* Make headings pop */
+h2 {
+
+    font-size: 48px;
+    margin-bottom: 20px; /* Space below heading */
 }
 
+/* Slider Container */
+.slider-container {
+    position: relative;
+    max-width: 1200px; /* Max width for the slider */
+    margin: 0 auto; /* Center the slider */
+    overflow: hidden; /* Hide overflow for a clean look */
+}
+
+/* Slider Styles */
+.slider {
+    display: flex; /* Flexbox for horizontal alignment */
+    transition: transform 0.5s ease; /* Smooth transition for slide movement */
+}
+
+.slide {
+    min-width: 100%; /* Each slide takes full width */
+    display: flex; /* Use flex to align members */
+    justify-content: space-around; /* Space between members */
+    padding: 20px 0; /* Padding for the slide */
+}
+
+/* Faculty Member Frames */
 .faculty-member {
-    display: inline-block;
-    margin: 20px;
+    background-color: #ffffff; /* White background for frames */
+    border: 2px solid #007bff; /* Blue border for frames */
+    border-radius: 10px; /* Rounded corners */
+    display: flex;
+    flex-direction: column; /* Vertical alignment */
+    align-items: center; /* Center content */
+    justify-content: flex-start; /* Align items at the top */
+    margin: 0 10px; /* Horizontal margin for spacing */
+    padding: 20px; /* Padding inside frames */
+    width: 18%; /* Width to fit 5 members in a row */
+    height: 300px; /* Fixed height for tall rectangles */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
+/* Photo Frame Styles */
 .photo-frame {
-    border: 5px solid #3498db; /* Bright frame color */
-    border-radius: 10px;
-    overflow: hidden;
-    width: 220px; /* Slightly larger frame */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease; /* Add transform effect */
-}
-
-.photo-frame:hover {
-    transform: scale(1.05); /* Scale up on hover */
+    width: 100%; /* Full width of the faculty member frame */
+    height: 70%; /* Height for photo */
+    overflow: hidden; /* Hide overflow */
+    border-radius: 8px; /* Rounded corners */
 }
 
 .photo-frame img {
-    width: 100%; /* Make image fill the frame */
-    height: auto;
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
 }
 
+/* Frame Text Styles */
 .frame-text {
+    margin-top: 10px; /* Space between image and text */
+    text-align: center; /* Center text */
+}
+
+/* Button Styles */
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #007bff; /* Blue background for buttons */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px;
     padding: 10px;
-    font-size: 16px;
-    color: #2c3e50;
-    text-align: center;
-    background-color: white; /* Background for text */
-    margin-top: -5px; /* Overlap the bottom of the image */
+    cursor: pointer;
+    z-index: 10; /* Ensure buttons are above the slider */
 }
 
-/* Testimonials Section Styles */
-.testimonials {
-    padding: 60px 20px;
-    text-align: center;
-    background: linear-gradient(135deg, #34495e, #2c3e50); /* Gradient background */
-    color: white;
-    position: relative;
-    overflow: hidden; /* Prevents overflow of pseudo-element */
+button.prev {
+    left: 10px; /* Position for previous button */
 }
 
-.testimonials h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    text-transform: uppercase; /* Make headings pop */
-}
-
-.testimonials p {
-    margin: 10px 0;
-    font-style: italic; /* Make testimonials stand out */
-    position: relative; /* For pseudo-element effect */
-}
-
-.testimonials p::before {
-    content: '“'; /* Opening quote */
-    font-size: 48px;
-    color: #e74c3c; /* Bright color for quotes */
-    position: absolute;
-    left: 10px;
-    top: -20px;
-}
-
-.testimonials p::after {
-    content: '”'; /* Closing quote */
-    font-size: 48px;
-    color: #e74c3c; /* Bright color for quotes */
-    position: absolute;
-    right: 10px;
-    bottom: -20px;
+button.next {
+    right: 10px; /* Position for next button */
 }
 
 /* Statistics Section Styles */
@@ -222,14 +207,11 @@ nav a:hover {
     padding: 60px 20px;
     text-align: center;
     background-color: #ecf0f1;
-    position: relative;
-    overflow: hidden; /* Prevents overflow of pseudo-element */
 }
 
 .stat {
     display: inline-block;
     margin: 20px;
-    position: relative; /* For pseudo-element effect */
 }
 
 .stat h3 {
@@ -240,44 +222,35 @@ nav a:hover {
 .stat p {
     font-size: 18px;
     color: #2c3e50;
-    margin-top: 10px;
-}
-
-.stat::before {
-    content: '★'; /* Star icon */
-    font-size: 30px;
-    color: #e74c3c; /* Bright color for star */
-    position: absolute;
-    top: -10px; /* Adjust position */
-    left: 50%;
-    transform: translateX(-50%); /* Center the star */
 }
 
 /* Footer Styles */
 footer {
-    padding: 20px;
     text-align: center;
-    background: linear-gradient(135deg, #2c3e50, #34495e); /* Gradient footer background */
+    padding: 20px 0;
+    background-color: #34495e; /* Dark footer color */
     color: white;
-    position: relative;
 }
 
 footer p {
-    margin: 5px 0;
-    font-size: 16px;
+    margin: 0;
 }
 
-.social-media {
-    margin-top: 10px;
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .faculty-member {
+        width: 20%; /* 5 members per slide */
+    }
 }
 
-.social-media a {
-    margin: 0 10px;
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
+@media (max-width: 768px) {
+    .faculty-member {
+        width: 45%; /* 2 members per slide */
+    }
 }
 
-.social-media a:hover {
-    color: #3498db; /* Bright color on hover */
+@media (max-width: 480px) {
+    .faculty-member {
+        width: 90%; /* 1 member per slide */
+    }
 }

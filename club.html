@@ -5,21 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STEM Club</title>
     <link rel="stylesheet" href="club.css">
+    <style>
+        /* Inline CSS for project heading */
+        .project-section h2 {
+            text-align: center;
+        }
+
+        /* Slider styles */
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 800px; /* Set a max width for the slider */
+            margin: 0 auto; /* Center the slider */
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;
+        }
+
+        .slide {
+            min-width: 100%; /* Each slide takes full width */
+            box-sizing: border-box;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .faculty-member {
+            text-align: center;
+            padding: 20px; /* Increased padding for larger containers */
+            flex: 0 0 200px; /* Allow larger width for each faculty member */
+        }
+
+        .photo-frame {
+            display: inline-block;
+            margin: 10px;
+            border: 2px solid #000;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 180px; /* Set a fixed width for the photo frame */
+            height: 250px; /* Set a fixed height for the photo frame */
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
     <header>
-       <div class="logo">STEM Club <img src="logofooter.png" alt="STEM Club Icon" class="logo-icon"></div>  
+        <div class="logo">STEM Club</div>
         <nav>
             <ul>
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#faculty">Faculty</a></li>
-                <li><a href="#blogs">Blogs</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#projects">Projects</a></li>
             </ul>
         </nav>
-        <a href="#" class="cta-button">Start Now</a>
     </header>
 
     <!-- Hero Section -->
@@ -30,7 +96,7 @@
 
     <!-- About Section -->
     <section id="about" class="features">
-        <h2>Why Choose Us?</h2>
+        <h2>About Us</h2>
         <div class="feature fade-in">
             <h3>Comprehensive STEM Education</h3>
             <p>We provide a holistic approach to STEM learning, covering a wide range of topics.</p>
@@ -45,56 +111,223 @@
         </div>
     </section>
 
-    <!-- Faculty Section -->
-    <section id="faculty" class="faculty">
-        <h2>Meet Our Faculty</h2>
-        <div class="faculty-member">
-            <div class="photo-frame">
-                <img src="faculty1.jpg" alt="Faculty Member 1">
-                <div class="frame-text">Dr. John Doe<br>Physics Instructor</div>
+    <!-- Mission Section -->
+    <section id="mission" class="features">
+        <h2>Our Mission</h2>
+        <p>To inspire and educate the next generation of innovators through quality STEM education and hands-on experiences.</p>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="faculty">
+        <h2>Meet Our Team</h2>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide active">
+                    <div class="faculty-member">
+                        <div class="photo-frame">
+                            <img src="faculty1.jpg" alt="Faculty Member 1">
+                            <div class="frame-text">Dr. John Doe<br>Physics Instructor</div>
+                        </div>
+                    </div>
+                    <div class="faculty-member">
+                        <div class="photo-frame">
+                            <img src="faculty2.jpg" alt="Faculty Member 2">
+                            <div class="frame-text">Ms. Jane Smith<br>Mathematics Instructor</div>
+                        </div>
+                    </div>
+                    <div class="faculty-member">
+                        <div class="photo-frame">
+                            <img src="faculty3.jpg" alt="Faculty Member 3">
+                            <div class="frame-text">Dr. Alice Johnson<br>Computer Science Instructor</div>
+                        </div>
+                    </div>
+                    <div class="faculty-member">
+                        <div class="photo-frame">
+                            <img src="faculty4.jpg" alt="Faculty Member 4">
+                            <div class="frame-text">Mr. Bob Brown<br>Chemistry Instructor</div>
+                        </div>
+                    </div>
+                    <div class="faculty-member">
+                        <div class="photo-frame">
+                            <img src="faculty5.jpg" alt="Faculty Member 5">
+                            <div class="frame-text">Ms. Emily White<br>Biology Instructor</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="faculty-member">
+                        <div class="photo-frame">
+                            <img src="faculty6.jpg" alt="Faculty Member 6">
+                            <div class="frame-text">Dr. Michael Green<br>Engineering Instructor</div>
+                        </div>
+                    </div>
+                    <div class="faculty-member">
+                        <div class="photo-frame">
+                            <img src="faculty7.jpg" alt="Faculty Member 7">
+                            <div class="frame-text">Ms. Sophia Black<br>Data Science Instructor</div>
+                        </div>
+                    </div>
+                    <div class="faculty-member">
+                        <div class="photo-frame">
+                            <img src="faculty8.jpg" alt="Faculty Member 8">
+                            <div class="frame-text">Mr. Oliver Blue<br>Robotics Instructor</div>
+                        </div>
+                    </div>
+                    <div class="faculty-member">
+                        <div class="photo-frame">
+                            <img src="faculty9.jpg" alt="Faculty Member 9">
+                            <div class="frame-text">Ms. Ava Red<br>Environmental Science Instructor</div>
+                        </div>
+                    </div>
+                    <div class="faculty-member">
+                        <div class="photo-frame">
+                            <img src="faculty10.jpg" alt="Faculty Member 10">
+                            <div class="frame-text">Dr. Liam Gold<br>Mathematics Instructor</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="faculty-member">
+                        <div class="photo-frame">
+                            <img src="faculty11.jpg" alt="Faculty Member 11">
+                            <div class="frame-text">Dr. Emma Gray<br>Physics Instructor</div>
+                        </div>
+                    </div>
+                    <div class="faculty-member">
+                        <div class="photo-frame">
+                            <img src="faculty12.jpg" alt="Faculty Member 12">
+                            <div class="frame-text">Ms. Mia Purple<br>Chemistry Instructor</div>
+                        </div>
+                    </div>
+                    <div class="faculty-member">
+                        <div class="photo-frame">
+                            <img src="faculty13.jpg" alt="Faculty Member 13">
+                            <div class="frame-text">Mr. Jack Silver<br>Mathematics Instructor</div>
+                        </div>
+                    </div>
+                    <div class="faculty-member">
+                        <div class="photo-frame">
+                            <img src="faculty14.jpg" alt="Faculty Member 14">
+                            <div class="frame-text">Ms. Chloe Pink<br>Computer Science Instructor</div>
+                        </div>
+                    </div>
+                    <div class="faculty-member">
+                        <div class="photo-frame">
+                            <img src="faculty15.jpg" alt="Faculty Member 15">
+                            <div class="frame-text">Mr. Henry Brown<br>Engineering Instructor</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="faculty-member">
-            <div class="photo-frame">
-                <img src="faculty2.jpg" alt="Faculty Member 2">
-                <div class="frame-text">Ms. Jane Smith<br>Mathematics Instructor</div>
-            </div>
-        </div>
-        <div class="faculty-member">
-            <div class="photo-frame">
-                <img src="faculty3.jpg" alt="Faculty Member 3">
-                <div class="frame-text">Dr. Alice Johnson<br>Computer Science Instructor</div>
-            </div>
+            <button class="prev" onclick="changeTeamSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeTeamSlide(1)">&#10095;</button>
         </div>
     </section>
 
-    <section class="testimonials">
-        <h2>What People Say</h2>
-        <p>"STEM Club transformed my child's understanding of technology."</p>
-        <p>"The best decision we made for our child's education."</p>
-    </section>
-    
-    <!-- Statistics Section -->
-    <section class="statistics">
-        <h2>Our Impact</h2>
-        <div class="stat">
-            <h3>500+</h3>
-            <p>Schools Transformed</p>
+    <!-- Projects Section -->
+    <section id="projects" class="project-section">
+        <h2>Our Projects</h2>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide active">
+                    <div class="project">
+                        <h3>Project Title 1</h3>
+                        <p>Project description goes here. This project focuses on innovative solutions in STEM.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="project">
+                        <h3>Project Title 2</h3>
+                        <p>This project promotes hands-on learning in coding and robotics.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="project">
+                        <h3>Project Title 3</h3>
+                        <p>Our coding camp helps students learn programming languages effectively.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="project">
+                        <h3>Project Title 4</h3>
+                        <p>This project teaches the basics of electronics and circuitry.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="project">
+                        <h3>Project Title 5</h3>
+                        <p>Explore data science through practical applications and real-world datasets.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="project">
+                        <h3>Project Title 6</h3>
+                        <p>Learn about artificial intelligence and its applications in various fields.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="prev" onclick="changeProjectSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeProjectSlide(1)">&#10095;</button>
         </div>
-        <div class="stat">
-            <h3>10,000+</h3>
-            <p>Students Taught</p>
-        </div>
     </section>
-    
+
     <!-- Footer Section -->
     <footer>
         <p>Contact Us: info@stemclub.in</p>
-        <div class="social-media">
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
-            <a href="#">Instagram</a>
-        </div>
     </footer>
+
+    <script>
+        // Team Slider
+        document.addEventListener('DOMContentLoaded', () => {
+            const teamSlider = document.querySelector('.faculty .slider');
+            const teamSlides = teamSlider.querySelectorAll('.slide');
+            const teamPrevButton = document.querySelector('.faculty .prev');
+            const teamNextButton = document.querySelector('.faculty .next');
+
+            let currentTeamIndex = 0;
+            const totalTeamSlides = teamSlides.length;
+
+            function showTeamSlides() {
+                const offset = -currentTeamIndex * 100; // Move to the current slide
+                teamSlider.style.transform = `translateX(${offset}%)`;
+            }
+
+            function changeTeamSlide(direction) {
+                currentTeamIndex = (currentTeamIndex + direction + totalTeamSlides) % totalTeamSlides;
+                showTeamSlides();
+            }
+
+            teamNextButton.addEventListener('click', () => changeTeamSlide(1));
+            teamPrevButton.addEventListener('click', () => changeTeamSlide(-1));
+
+            showTeamSlides(); // Initial display
+        });
+
+        // Project Slider
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectSlider = document.querySelector('.project-section .slider');
+            const projectSlides = projectSlider.querySelectorAll('.slide');
+            const projectPrevButton = document.querySelector('.project-section .prev');
+            const projectNextButton = document.querySelector('.project-section .next');
+
+            let currentProjectIndex = 0;
+            const totalProjectSlides = projectSlides.length;
+
+            function showProjectSlides() {
+                const offset = -currentProjectIndex * 100; // Move to the current slide
+                projectSlider.style.transform = `translateX(${offset}%)`;
+            }
+
+            function changeProjectSlide(direction) {
+                currentProjectIndex = (currentProjectIndex + direction + totalProjectSlides) % totalProjectSlides; // Loop
+                showProjectSlides();
+            }
+
+            projectNextButton.addEventListener('click', () => changeProjectSlide(1));
+            projectPrevButton.addEventListener('click', () => changeProjectSlide(-1));
+
+            showProjectSlides(); // Initial display
+        });
+    </script>
 </body>
 </html>
